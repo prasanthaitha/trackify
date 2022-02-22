@@ -40,14 +40,6 @@ public class Location {
         this.deviceId = deviceId;
     }
 
-    public Timestamp getUpdatedTs() {
-        return updatedTs;
-    }
-
-    public void setUpdatedTs(long updatedTs) {
-        this.updatedTs = updatedTs;
-    }
-
     public String getLocation() {
         return location;
     }
@@ -62,5 +54,13 @@ public class Location {
 
     public void setSpeed(float speed) {
         this.speed = speed;
+    }
+
+    public Timestamp getUpdatedTs() {
+        return updatedTs;
+    }
+
+    public void setUpdatedTs(Timestamp updatedTs) {
+        this.updatedTs = updatedTs;
     }
 }

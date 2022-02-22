@@ -16,14 +16,23 @@ public class FreqConfigController {
     @Autowired
     private FreqConfigService freqConfigService;
 
-
-    @PostMapping(path="/latest")
+    /**
+     *     int tempVersion=doc["version"];
+     *     if (tempVersion>version){
+     *       version=tempVersion;
+     *       configFrequency=doc["configFrequency"];  //in minutes
+     *       locationFrequency=doc["locationFrequency"];  //in minutes
+     *       geofenceDataFrequency=doc["geofenceDataFrequency"];
+     * @param deviceId
+     * @return
+     */
+    @GetMapping(path="/latest")
     public @ResponseBody String fetchLatestConfig (@RequestParam String deviceId) {
         return freqConfigService.fetchLatestConfig(deviceId);
     }
 
     @PostMapping(path = "/save")
-    public @ResponseBody void saveConfig(@RequestParam String deviceId, @RequestParam String configData) {
+    public @ResponseBody void saveConfig(String deviceId, String configData) {
         if (deviceId == null || deviceId.isEmpty())
             deviceId = CommonConstants.DEFAULT_USER_ID;
         freqConfigService.saveConfigData(deviceId, configData);

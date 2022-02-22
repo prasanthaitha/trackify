@@ -33,9 +33,19 @@ public class GeoFenceController {
         geoFenceService.saveGeoFenceData(geoFenceName, p1, p2, p3, p4, dcNum);
     }
 
-    @PostMapping()
-    public @ResponseBody String verifyGeoFence(@RequestParam double lat, @RequestParam double lon,
-                                               @RequestParam String deviceId) {
+
+//    isInside=doc["isInside"];
+//    P1.x=doc["P1_x"];
+//    P1.y=doc["P1_y"];
+//    P2.x=doc["P2_x"];
+//    P2.y=doc["P2_y"];
+//    P3.x=doc["P3_x"];
+//    P3.y=doc["P3_y"];
+//    P4.x=doc["P4_x"];
+//    P4.y=doc["P4_y"];
+
+    @GetMapping("/fetch")
+    public @ResponseBody String verifyGeoFence(@RequestParam double lat, @RequestParam double lon) {
         return "";
     }
 }

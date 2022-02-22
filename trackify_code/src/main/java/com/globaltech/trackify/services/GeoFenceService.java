@@ -3,11 +3,13 @@ package com.globaltech.trackify.services;
 import com.globaltech.trackify.pojos.GeoFence;
 import com.globaltech.trackify.repository.GeoFenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+@Component
 public class GeoFenceService {
 
 //    One API to save GeoFence Data
