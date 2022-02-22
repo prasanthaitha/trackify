@@ -37,7 +37,10 @@ public class LocationController {
     }
 
     @GetMapping(value="/fetch")
-    public @ResponseBody LocationDto fetchLocation (@RequestParam String deviceId) {
-        return  locationService.getLocation(deviceId);
+    public @ResponseBody String fetchLocation (@RequestParam String deviceId) {
+        LocationDto locationDto = locationService.getLocation(deviceId);
+        return  "Latitude:: "+locationDto.getLatitude()
+                +"\nLongitude:: "+locationDto.getLongitude()
+                +"\nLastUpdatedTs:: "+locationDto.getUpdatedTs();
     }
 }
